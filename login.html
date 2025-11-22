@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form</title>
+</head>
+<style>
+    img {float:right;
+    height:600px;
+    width:800px;
+    margin-bottom: 800px;
+    margin-top: 10px;
+}
+</style>
+<body>
+    <header><h2>Registration Form</h2></header>
+  <form action="submission.html" , method="post" onsubmit="return validateForm()">
+
+
+
+     <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" required><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname"><br>
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password"><br>
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br>
+    <label for="date">Date of Birth:</label><br>
+    <input type="date" id="date" name="date"><br>
+
+    <p>Gender:</p>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br>
+
+    <label for="contact no.">contact numbar</label><br>
+    <input type="number" id="contact no" name="contact no" required><br>
+
+    <label for="eduction qualification">Select your qualification</label><br>
+    <select id="qualification" name="qualification">
+        <option value="10th passed">10th passed</option><br>
+        <option value="12th passed">12th passed</option><br>
+        <option value="undergraduate">undergraduate</option><br>
+        <option value="postgraduate">postgraduate</option><br>
+    </select><br>
+   <input type="reset" value="clear form">
+   <input type="submit" valur="submit">
+  </form>
+<img src="C:\Users\Keya\Downloads\confirm-20251121T150907Z-1-001\confirm\signin.html" alt="image">
+
+   <script>
+    function validateForm()
+    {
+        var name = document.getElementById("lname").value;
+        if (name=="")
+        {
+            alert("Please enter your name");
+            return false;
+        }
+
+        var email=document.getElementById("email").value;
+                    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\. [\. [a-zA-Z]{2,6}$/;
+
+                 if(!email.match(emailPattern)){
+                    alert("Please enter your valid email address.");
+                    return false;}
+
+        alert("form submitted sucessfully!");
+                return true;
+
+    }
